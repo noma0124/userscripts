@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Leonardo.ai 本日分 一括ダウンロード
 // @namespace    leonardo-bulk-dl
-// @version      1.0
+// @version      1.1
 // @description  「Today」セクションの画像だけをまとめてダウンロードするボタンを追加します
 // @match        https://app.leonardo.ai/*
 // @grant        GM_xmlhttpRequest

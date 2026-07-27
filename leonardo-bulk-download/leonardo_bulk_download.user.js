@@ -54,19 +54,25 @@
   }
 
   // 現在DOM上にある画像(cdn.leonardo.ai)を集める。境界より下(古いセクション)にあるものは除外
-  function collectVisibleImages(imageMap) {
-    const boundaryTop = findOlderSectionBoundaryTop();
-    document.querySelectorAll('img[src*="cdn.leonardo.ai"]').forEach((img) => {
-      if (!img.src) return;
-      const top = img.getBoundingClientRect().top;
-      if (boundaryTop !== null && top >= boundaryTop) return; // 古いセクション以降は除外
-      const baseUrl = img.src.split('?')[0]; // クエリ抜きをキーにして重複排除
-      if (!imageMap.has(baseUrl)) {
-        imageMap.set(baseUrl, img.src);
-      }
-    });
-    return boundaryTop !== null;
-  }
+function collectVisibleImages(imageMap) {
+  const boundaryTop = findOlderSectionBoundaryTop();
+  document.querySelectorAll('img[src*="cdn.leonardo.ai"]').forEach((img) => {
+    if (!img.src) return;
+
+    // ★追加: 生成結果カード/リストアイテム配下の画像だけを対象にする
+    const container = img.closest('[data-testid]');
+    const testid = container?.getAttribute('data-testid') || '';
+    if (!/^generation-(list-item|card)/.test(testid)) return;
+
+    const top = img.getBoundingClientRect().top;
+    if (boundaryTop !== null && top >= boundaryTop) return;
+    const baseUrl = img.src.split('?')[0];
+    if (!imageMap.has(baseUrl)) {
+      imageMap.set(baseUrl, img.src);
+    }
+  });
+  return boundaryTop !== null;
+}
 
   async function downloadTodayImages() {
     const btn = document.getElementById('leo-bulk-dl-btn');

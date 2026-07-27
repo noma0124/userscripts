@@ -5,8 +5,8 @@
 // @description  「Today」セクションの画像だけをまとめてダウンロードするボタンを追加します
 // @match        https://app.leonardo.ai/*
 // @grant        GM_xmlhttpRequest
-// @downloadURL  https://raw.githubusercontent.com/noma0124/userscripts/main/leonardo-bulk-download/leonardo_bulk_download.user.js
-// @updateURL    https://raw.githubusercontent.com/noma0124/userscripts/main/leonardo-bulk-download/leonardo_bulk_download.user.js
+// @downloadURL  https://raw.githubusercontent.com/asupon-tools/userscripts/main/leonardo-bulk-download/leonardo_bulk_download.user.js
+// @updateURL    https://raw.githubusercontent.com/asupon-tools/userscripts/main/leonardo-bulk-download/leonardo_bulk_download.user.js
 // ==/UserScript==
 
 (function () {

@@ -1,10 +1,25 @@
-# Userscripts
+# Leonardo.ai 本日分 一括ダウンロード
 
-自作のユーザースクリプト（Tampermonkey用）を公開しています。
+Leonardo.ai の「Today」セクションに表示されている画像だけをまとめてダウンロードするTampermonkeyスクリプトです。
 
-| スクリプト | 概要 | 対応サイト |
-|---|---|---|
-| [leonardo-bulk-download](./leonardo-bulk-download) | 今日生成した画像を一括ダウンロード | Leonardo.ai |
+## 特徴
+- 「今日」生成した画像だけを対象に一括ダウンロード
+- 仮想スクロール対策済み（画面外の画像も取りこぼさず収集）
+- 可能な限り高画質URLを優先して取得（失敗時は自動フォールバック）
 
-## ライセンス
-[MIT License](./LICENSE)
+## インストール方法
+1. [Tampermonkey](https://www.tampermonkey.net/) をブラウザに導入
+2. このリポジトリの `leonardo_bulk_download.user.js` を開き、Tampermonkeyにインストール
+3. Leonardo.aiの生成画面を開くと、右上に「今日の画像を一括DL」ボタンが表示されます
+
+## 使い方
+ボタンを押すと画像を自動収集し、件数を確認したうえでダウンロードを開始します。
+
+## ☕ サポート / Support
+
+このスクリプトが役に立ったら、コーヒー一杯分のサポートをいただけると嬉しいです！
+If this tool has saved you time, a coffee-sized tip would be greatly appreciated ☕
+
+<a href="https://buymeacoffee.com/trendsnews" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 180px !important;">
+</a>

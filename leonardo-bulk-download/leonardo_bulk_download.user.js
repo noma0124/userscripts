@@ -42,12 +42,12 @@
     for (const el of candidates) {
       if (el.children.length === 0) {
         const text = el.textContent.trim();
-        if (
-          text.length < 30 &&
-          /^(Yesterday|\d{1,2}\s*(days?)?\s*ago|Last\s+\d+\s+days|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i.test(text)
-        ) {
-          return el.getBoundingClientRect().top;
-        }
+          if (
+              text.length < 30 &&
+              /^(Yesterday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|\d{1,2}\s*(days?)?\s*ago|Last\s+\d+\s+days|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b/i.test(text)
+          ) {
+              return el.getBoundingClientRect().top;
+          }
       }
     }
     return null;
